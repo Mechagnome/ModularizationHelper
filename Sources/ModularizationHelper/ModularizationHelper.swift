@@ -28,13 +28,26 @@ public class ModularizationHelper: AlliancesApp {
     
     required public init(_ configuration: AlliancesConfiguration) {
         self.configuration = configuration
-        tasks.append(PublicHelper(configuration))
-        tasks.append(ImportHelper(configuration))
-        tasks.append(XibHelper(configuration))
-        tasks.append(MoveHelper(configuration))
+        
+        if (getSettings(for: .public) as? Bool) ?? true {
+            tasks.append(PublicHelper(configuration))
+        }
+        if (getSettings(for: .import) as? Bool) ?? true {
+            tasks.append(ImportHelper(configuration))
+        }
+        if (getSettings(for: .xib) as? Bool) ?? true {
+            tasks.append(XibHelper(configuration))
+        }
+        if (getSettings(for: .move) as? Bool) ?? true {
+            tasks.append(MoveHelper(configuration))
+        }
     }
     
     public func run() throws { }
+    
+    public func openSettings() throws {
+        show(view: getSettings())
+    }
     
     func getSettings() -> AnyView {
         cancellables = Set<AnyCancellable>()
@@ -49,21 +62,25 @@ public class ModularizationHelper: AlliancesApp {
         let item2 = SettingsBoolItem(name: "子插件选择", default: (getSettings(for: .public) as? Bool) ?? true, description: "插入 public")
         item2.value.sink { [weak self] value in
             self?.setSettings(value: value, for: .public)
+            self?.reload()
         }.store(in: &cancellables)
         
         let item3 = SettingsBoolItem(name: "", default: (getSettings(for: .import) as? Bool) ?? true, description: "插入 import")
         item3.value.sink { [weak self] value in
             self?.setSettings(value: value, for: .import)
+            self?.reload()
         }.store(in: &cancellables)
         
         let item4 = SettingsBoolItem(name: "", default: (getSettings(for: .xib) as? Bool) ?? true, description: "更新 xib 模块")
         item4.value.sink { [weak self] value in
             self?.setSettings(value: value, for: .xib)
+            self?.reload()
         }.store(in: &cancellables)
         
         let item5 = SettingsBoolItem(name: "", default: (getSettings(for: .move) as? Bool) ?? true, description: "拷贝有效代码")
         item5.value.sink { [weak self] value in
             self?.setSettings(value: value, for: .move)
+            self?.reload()
         }.store(in: &cancellables)
         
         return .init(SettingsController(items: [item1, item2, item3, item4, item5]))
