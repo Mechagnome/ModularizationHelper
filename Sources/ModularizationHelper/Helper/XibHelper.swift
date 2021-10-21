@@ -42,13 +42,13 @@ public final class XibHelper: AlliancesApp {
         let module = configuration.settings[Key.module.rawValue] as? String,
         let oldModule = configuration.settings[Key.module.rawValue] as? String else {
             // 参数未设置
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         
         guard CodeHelper.directoryExists(path: path), CodeHelper.directoryExists(path: scanPath) else {
             // 参数不合法，目录不存在
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         

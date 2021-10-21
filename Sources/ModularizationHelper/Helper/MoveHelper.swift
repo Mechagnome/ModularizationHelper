@@ -44,13 +44,13 @@ public final class MoveHelper: AlliancesApp {
         let patternPrefix = configuration.settings[Key.patternPrefix.rawValue] as? String,
         let patternSuffix = configuration.settings[Key.patternSuffix.rawValue] as? String else {
             // 参数未设置
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         
         guard CodeHelper.fileExists(path: sourceFile), CodeHelper.fileExists(path: targetFile), CodeHelper.directoryExists(path: scanDir) else {
             // 参数不合法，目录不存在
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         

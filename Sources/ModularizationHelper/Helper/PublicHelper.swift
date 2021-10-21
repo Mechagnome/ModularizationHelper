@@ -36,14 +36,14 @@ public final class PublicHelper: AlliancesApp {
     public func run() throws {
         guard let path = configuration.settings["path"] as? String else {
             // 参数未设置
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         
         var isDirectory: ObjCBool = true
         guard FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) else {
             // 参数不合法
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         

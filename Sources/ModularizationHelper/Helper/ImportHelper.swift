@@ -40,13 +40,13 @@ public final class ImportHelper: AlliancesApp {
         let scanPath = configuration.settings[Key.scanPath.rawValue] as? String,
         let module = configuration.settings[Key.module.rawValue] as? String else {
             // 参数未设置
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         
         guard CodeHelper.directoryExists(path: path), CodeHelper.directoryExists(path: scanPath) else {
             // 参数不合法，目录不存在
-            show(view: getSettings())
+            showSettingsView()
             return
         }
         
