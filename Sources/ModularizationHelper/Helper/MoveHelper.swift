@@ -58,31 +58,31 @@ public final class MoveHelper: AlliancesApp {
         cancellables = Set<AnyCancellable>()
         
         let sourceFile = configuration.settings[Key.sourceFile.rawValue] as? String ?? ""
-        let item1 = SettingsInputItem(name: "待拷贝文件", default: sourceFile, placeholder: "请设置待拷贝文件路径")
+        let item1 = SettingsInputItem(name: "待拷贝文件：", default: sourceFile, placeholder: "请设置待拷贝文件路径")
         item1.value.sink { [weak self] value in
             self?.configuration.settings[Key.sourceFile.rawValue] = value
         }.store(in: &cancellables)
         
         let targetFile = configuration.settings[Key.targetFile.rawValue] as? String ?? ""
-        let item2 = SettingsInputItem(name: "拷贝至文件", default: targetFile, placeholder: "请设置拷贝至文件路径")
+        let item2 = SettingsInputItem(name: "拷贝至文件：", default: targetFile, placeholder: "请设置拷贝至文件路径")
         item2.value.sink { [weak self] value in
             self?.configuration.settings[Key.targetFile.rawValue] = value
         }.store(in: &cancellables)
         
         let scanDir = configuration.settings[Key.scanDir.rawValue] as? String ?? ""
-        let item3 = SettingsInputItem(name: "扫描文件夹", default: scanDir, placeholder: "请设置扫描文件夹路径")
+        let item3 = SettingsInputItem(name: "扫描文件夹：", default: scanDir, placeholder: "请设置扫描文件夹路径")
         item3.value.sink { [weak self] value in
             self?.configuration.settings[Key.scanDir.rawValue] = value
         }.store(in: &cancellables)
         
         let patternPrefix = configuration.settings[Key.patternPrefix.rawValue] as? String ?? ""
-        let item4 = SettingsInputItem(name: "匹配规则 - 起", default: patternPrefix, placeholder: "请设置匹配规则 - 起")
+        let item4 = SettingsInputItem(name: "匹配规则 - 起：", default: patternPrefix, placeholder: "请设置匹配规则 - 起")
         item3.value.sink { [weak self] value in
             self?.configuration.settings[Key.patternPrefix.rawValue] = value
         }.store(in: &cancellables)
         
         let patternSuffix = configuration.settings[Key.patternSuffix.rawValue] as? String ?? ""
-        let item5 = SettingsInputItem(name: "匹配规则 - 始", default: patternSuffix, placeholder: "请设置匹配规则 - 始")
+        let item5 = SettingsInputItem(name: "匹配规则 - 始：", default: patternSuffix, placeholder: "请设置匹配规则 - 始")
         item3.value.sink { [weak self] value in
             self?.configuration.settings[Key.patternSuffix.rawValue] = value
         }.store(in: &cancellables)

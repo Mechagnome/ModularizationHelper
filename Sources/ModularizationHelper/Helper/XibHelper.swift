@@ -56,25 +56,25 @@ public final class XibHelper: AlliancesApp {
         cancellables = Set<AnyCancellable>()
         
         let path = configuration.settings[Key.path.rawValue] as? String ?? ""
-        let item1 = SettingsInputItem(name: "需要更新 xib 的路径", default: path, placeholder: "请设置需要更新 xib 的路径")
+        let item1 = SettingsInputItem(name: "需要更新 xib 的路径：", default: path, placeholder: "请设置需要更新 xib 的路径")
         item1.value.sink { [weak self] value in
             self?.configuration.settings[Key.path.rawValue] = value
         }.store(in: &cancellables)
         
         let scanPath = configuration.settings[Key.scanPath.rawValue] as? String ?? ""
-        let item2 = SettingsInputItem(name: "扫描 class 的路径", default: scanPath, placeholder: "请设置扫描 class 的路径")
+        let item2 = SettingsInputItem(name: "扫描 class 的路径：", default: scanPath, placeholder: "请设置扫描 class 的路径")
         item2.value.sink { [weak self] value in
             self?.configuration.settings[Key.scanPath.rawValue] = value
         }.store(in: &cancellables)
         
         let module = configuration.settings[Key.module.rawValue] as? String ?? ""
-        let item3 = SettingsInputItem(name: "新模块", default: module, placeholder: "请设置需要更新的模块名称")
+        let item3 = SettingsInputItem(name: "新模块：", default: module, placeholder: "请设置需要更新的模块名称")
         item3.value.sink { [weak self] value in
             self?.configuration.settings[Key.module.rawValue] = value
         }.store(in: &cancellables)
         
         let oldModule = configuration.settings[Key.oldModule.rawValue] as? String ?? ""
-        let item4 = SettingsInputItem(name: "旧模块", default: oldModule, placeholder: "请设置需要被替换的模块名称")
+        let item4 = SettingsInputItem(name: "旧模块：", default: oldModule, placeholder: "请设置需要被替换的模块名称")
         item4.value.sink { [weak self] value in
             self?.configuration.settings[Key.oldModule.rawValue] = value
         }.store(in: &cancellables)

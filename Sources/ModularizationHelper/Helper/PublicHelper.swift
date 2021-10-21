@@ -55,7 +55,7 @@ public final class PublicHelper: AlliancesApp {
         cancellables = Set<AnyCancellable>()
         
         let path = configuration.settings[Key.path.rawValue] as? String ?? ""
-        let item = SettingsInputItem(name: "路径", default: path, placeholder: "请设置文件/目录路径")
+        let item = SettingsInputItem(name: "路径：", default: path, placeholder: "请设置文件/目录路径")
         item.value.sink { [weak self] value in
             self?.configuration.settings[Key.path.rawValue] = value
         }.store(in: &cancellables)
