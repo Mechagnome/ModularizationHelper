@@ -23,6 +23,9 @@ public final class PublicHelper: AlliancesApp {
     public var core: AlliancesUICore = .init()
     public var tasks: [AlliancesApp] = []
     public var configuration: AlliancesConfiguration
+    public var settingsView: AnyView? {
+        return getSettings()
+    }
     
     private var cancellables = Set<AnyCancellable>()
     

@@ -25,6 +25,9 @@ public class ModularizationHelper: AlliancesApp {
     public var core: AlliancesUICore = .init()
     public var tasks: [AlliancesApp] = []
     public var configuration: AlliancesConfiguration
+    public var settingsView: AnyView? {
+        return getSettings()
+    }
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -34,10 +37,6 @@ public class ModularizationHelper: AlliancesApp {
     }
     
     public func run() throws { }
-    
-    public func openSettings() throws {
-        show(view: getSettings())
-    }
     
     func updateTasks() {
         tasks = []
