@@ -15,7 +15,7 @@ public final class PublicHelper: AlliancesApp {
     
     public static var bundleID: String { "PublicHelper.ModularizationHelper.Alliances.Mechagnome" }
     
-    public var name: String { "插入 Public 关键字" }
+    public var name: String { "插入 public" }
     public var remark: String? { nil }
     
     public var core: AlliancesUICore = .init()
