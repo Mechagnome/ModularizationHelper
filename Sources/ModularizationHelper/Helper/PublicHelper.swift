@@ -64,7 +64,7 @@ public final class PublicHelper: AlliancesApp {
     }
 }
 
-private extension PublicHelper {
+extension PublicHelper {
     
     func addPublic(dir: String) {
         let files = CodeHelper.getAllFile(at: dir)

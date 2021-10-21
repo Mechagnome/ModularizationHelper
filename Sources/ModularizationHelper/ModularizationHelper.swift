@@ -24,6 +24,10 @@ public class ModularizationHelper: AlliancesApp {
     
     required public init(_ configuration: AlliancesConfiguration) {
         self.configuration = configuration
+        tasks.append(PublicHelper(configuration))
+        tasks.append(ImportHelper(configuration))
+        tasks.append(XibHelper(configuration))
+        tasks.append(MoveHelper(configuration))
     }
     
     public func run() throws { }
