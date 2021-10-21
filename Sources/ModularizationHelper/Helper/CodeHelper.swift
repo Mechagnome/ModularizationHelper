@@ -17,6 +17,17 @@ struct CodeHelper {
     }
     
     static func getAllFile(at dir: String, suffixList: [String] = ["swift"]) -> [String] {
+        guard directoryExists(path: dir) else {
+            if fileExists(path: dir) {
+                for suffix in suffixList {
+                    if dir.hasSuffix(suffix) {
+                        return [dir]
+                    }
+                }
+            }
+            return []
+        }
+        
         var filePaths: [String] = []
         do {
             let list = try FileManager.default.contentsOfDirectory(atPath: dir)
