@@ -13,7 +13,9 @@ public final class PublicHelper: AlliancesApp {
         case path
     }
     
-    public static var bundleID: String { "PublicHelper.ModularizationHelper.Alliances.Mechagnome" }
+    public static var appInfo: AppInfo {
+        .init(id: "PublicHelper.ModularizationHelper.Alliances.Mechagnome", name: "插入 public")
+    }
     
     public var name: String { "插入 public" }
     public var remark: String? { nil }

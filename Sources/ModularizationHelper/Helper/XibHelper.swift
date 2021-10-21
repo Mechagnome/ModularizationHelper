@@ -16,7 +16,9 @@ public final class XibHelper: AlliancesApp {
         case oldModule
     }
     
-    public static var bundleID: String { "XibHelper.ModularizationHelper.Alliances.Mechagnome" }
+    public static var appInfo: AppInfo {
+        .init(id: "XibHelper.ModularizationHelper.Alliances.Mechagnome", name: "更新 xib 模块")
+    }
     
     public var name: String { "更新 xib 模块" }
     public var remark: String? { nil }

@@ -15,8 +15,10 @@ public final class ImportHelper: AlliancesApp {
         case module
     }
     
-    public static var bundleID: String { "ImportHelper.ModularizationHelper.Alliances.Mechagnome" }
-    
+    public static var appInfo: AppInfo {
+        .init(id: "ImportHelper.ModularizationHelper.Alliances.Mechagnome", name: "插入 import")
+    }
+
     public var name: String { "插入 import" }
     public var remark: String? { nil }
     

@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/Mechagnome/Alliances",
         "state": {
           "branch": "master",
-          "revision": "95702ee8a7b9c445b2f636a1f7cf7a9154f138fe",
+          "revision": "eab8017cc1a59857e5f86a419f4524674b141177",
           "version": null
         }
       },
@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/Mechagnome/BaseUI",
         "state": {
           "branch": "master",
-          "revision": "f1daa8d24644a278e91d0449445d349816106a00",
+          "revision": "4f553788deda9ad77089ec56169b27bc5d318244",
           "version": null
         }
       },

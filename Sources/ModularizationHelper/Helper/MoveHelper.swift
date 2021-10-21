@@ -17,7 +17,9 @@ public final class MoveHelper: AlliancesApp {
         case patternSuffix
     }
     
-    public static var bundleID: String { "MoveHelper.ModularizationHelper.Alliances.Mechagnome" }
+    public static var appInfo: AppInfo {
+        .init(id: "MoveHelper.ModularizationHelper.Alliances.Mechagnome", name: "拷贝有效代码")
+    }
     
     public var name: String { "拷贝有效代码" }
     public var remark: String? { nil }

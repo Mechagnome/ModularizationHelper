@@ -14,7 +14,9 @@ public class ModularizationHelper: AlliancesApp {
         case move
     }
     
-    public static var bundleID: String { "ModularizationHelper.Alliances.Mechagnome" }
+    public static var appInfo: AppInfo {
+        .init(id: "ModularizationHelper.Alliances.Mechagnome", name: "组件化助手", summary: "")
+    }
     
     public var name: String { "组件化助手" }
     public var remark: String? { getSettings(for: .remark) as? String }
